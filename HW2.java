@@ -91,7 +91,12 @@ class Deck{
 	public void printDeck(){
 		//Hint: print all items in ArrayList<Card> cards, 
 		//TODO: please implement and reuse printCard method in Card class (5 points)
-		System.out.println(cards);
+		for(int i = 0;i < cards.size();i++) 
+		{
+			Card j = cards.get(i);
+			System.out.println(j.getSuit() +"," + j.getRank());
+		}
+
 	}
 	public ArrayList<Card> getAllCards(){
 		return cards;
@@ -115,10 +120,8 @@ class Card{
 	public void printCard(){
 		//Hint: print (System.out.println) card as suit,rank, for example: print 1,1 as Clubs Ace	
 		for(int s=1;s<=4;s++) {
-			for(int r=1;r<=13;r++) {
-				if (r == 1){
-					System.out.println(s+","+"Ace"+" ");
-				}
+			for(int r=1;r<=13;r++) 
+			{
 				System.out.println(s+","+r+" ");
 			}
 		}
