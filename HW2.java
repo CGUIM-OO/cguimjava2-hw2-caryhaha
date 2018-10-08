@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 /**
  * @author TODO: B0444109 林奕銜
+ * 1.用getSuit、getRank來製作printcard() 讓這個method可以印出卡片的花色+數值
+ * 2.要把卡片加入名為cards的Arraylist中，利用三個for迴圈讓(ndeck)副卡片都能執行cards.add()-->把元素塞進Arraylist
+ * 3.用printcard()來製作printdeck，利用for迴圈(次數為Arraylist存放元素數)依序把Arraylist中的元素取出暫存於變數c
+ * ，再讓c使用printcard()即可印出元素之花色+數值
  * Try to write some comments for your codes (methods, 15 points)
  */
 public class HW2 {
@@ -93,8 +97,8 @@ class Deck{
 		//TODO: please implement and reuse printCard method in Card class (5 points)
 		for(int i = 0;i < cards.size();i++) 
 		{
-			Card j = cards.get(i);
-			System.out.println(j.getSuit() +"," + j.getRank());
+			Card c = cards.get(i);
+			c.printCard();
 		}
 
 	}
@@ -119,14 +123,9 @@ class Card{
 	//TODO: 1. Please implement the printCard method (20 points, 10 for suit, 10 for rank)
 	public void printCard(){
 		//Hint: print (System.out.println) card as suit,rank, for example: print 1,1 as Clubs Ace	
-		for(int s=1;s<=4;s++) {
-			for(int r=1;r<=13;r++) 
-			{
-				System.out.println(s+","+r+" ");
-			}
+				System.out.println(getSuit()+","+getRank());
 		}
 
-	}
 	public int getSuit(){
 		return suit;
 	}
